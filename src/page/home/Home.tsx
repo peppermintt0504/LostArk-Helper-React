@@ -71,11 +71,15 @@ const Home: React.FC<homeProps> = ({}) => {
               </div>
               <div className="produceData-data">
                 <div>판매단위 당 제작 비용</div>
-                <div className="bold">---</div>
+                <div className="bold flexCenter">
+                  ---<div className="coin "></div>
+                </div>
               </div>
               <div className="produceData-data">
                 <div>제작단위 당 제작 비용</div>
-                <div className="bold">---</div>
+                <div className="bold flexCenter">
+                  ---<div className="coin "></div>
+                </div>
               </div>
 
               <div className="rowLine" />
@@ -86,7 +90,9 @@ const Home: React.FC<homeProps> = ({}) => {
               </div>
               <div className="produceData-data">
                 <div>총 제작 비용</div>
-                <div className="bold">1</div>
+                <div className="bold flexCenter">
+                  1<div className="coin "></div>
+                </div>
               </div>
             </div>
 
@@ -102,15 +108,21 @@ const Home: React.FC<homeProps> = ({}) => {
               </div>
               <div className="produceData-data">
                 <div>판매 단위 당 수수료</div>
-                <div className="bold">3</div>
+                <div className="bold flexCenter">
+                  3<div className="coin "></div>
+                </div>
               </div>
               <div className="produceData-data">
                 <div>판매 단위 당 원가</div>
-                <div className="bold">59.75</div>
+                <div className="bold flexCenter">
+                  59.75<div className="coin "></div>
+                </div>
               </div>
               <div className="produceData-data">
                 <div>판매 단위 당 판매 차익</div>
-                <div className="bold">-1.66</div>
+                <div className="bold flexCenter">
+                  -1.66<div className="coin "></div>
+                </div>
               </div>
 
               <div className="rowLine" />
@@ -121,15 +133,21 @@ const Home: React.FC<homeProps> = ({}) => {
               </div>
               <div className="produceData-data">
                 <div>총 수수료</div>
-                <div className="bold">45</div>
+                <div className="bold flexCenter">
+                  45<div className="coin "></div>
+                </div>
               </div>
               <div className="produceData-data">
                 <div>총 원가</div>
-                <div className="bold">894.88</div>
+                <div className="bold flexCenter">
+                  894.88<div className="coin "></div>
+                </div>
               </div>
               <div className="produceData-data">
                 <div>총 판매 차익</div>
-                <div className="bold">-25</div>
+                <div className="bold flexCenter">
+                  -25<div className="coin "></div>
+                </div>
               </div>
               <div className="produceData-data">
                 <div>원가 대비 이익률</div>

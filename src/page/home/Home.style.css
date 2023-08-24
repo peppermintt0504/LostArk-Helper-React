@@ -79,8 +79,14 @@
   display: flex;
   justify-content: space-between;
 }
+.flexCenter {
+  display: flex;
+  align-items: center;
+  gap: 2px;
+}
 .bold {
   font-weight: 700;
+  align-items: center;
 }
 .rowLine {
   margin-top: 10px;
@@ -100,4 +106,15 @@
 }
 .dataInput:focus {
   border-bottom: 2px #00000099 solid;
+}
+.coin {
+  content: "";
+  width: 18px;
+  height: 19px;
+  background-position: -480px -1px;
+  background-image: url(../../img/loatool-sprite.png);
+  background-repeat: no-repeat;
+  background-size: 500px 500px;
+  display: inline-block;
+  font-size: 0;
 }
