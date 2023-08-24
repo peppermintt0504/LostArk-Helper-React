@@ -1,0 +1,103 @@
+.pageLayout {
+  padding-top: 50px;
+  display: flex;
+  min-height: 100vh;
+  background-color: #eafbff;
+}
+.ContentsContainer {
+  display: flex;
+  width: 100vw;
+  margin: 20px;
+}
+
+.Contents {
+  width: 70%;
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+.ContentsSide {
+  width: 15%;
+}
+
+.itemInfo {
+  width: 100%;
+  background-color: white;
+  border-radius: 10px;
+  height: 150px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.itemName {
+}
+.recommend {
+  display: flex;
+  justify-content: space-evenly;
+  width: 100%;
+}
+.RCM-detail {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 5px;
+}
+.RCM-title {
+  color: #00000099;
+}
+.RCM-result {
+  font-size: 1.25rem;
+}
+.red {
+  color: #f44336;
+}
+.green {
+  color: #63b467;
+}
+
+.DetailData {
+  display: flex;
+  gap: 10px;
+}
+.DetailDataPage {
+  padding: 15px;
+  display: flex;
+  flex-direction: column;
+
+  background-color: white;
+  border-radius: 10px;
+  width: 100%;
+
+  gap: 10px;
+}
+.produceData-Title {
+  font-size: 1.25rem;
+}
+.produceData-data {
+  display: flex;
+  justify-content: space-between;
+}
+.bold {
+  font-weight: 700;
+}
+.rowLine {
+  margin-top: 10px;
+  margin-bottom: 10px;
+  height: 1px;
+  width: 100%;
+  border-top: 1px #00000030 solid;
+}
+
+.dataInput {
+  background-color: #eafbff;
+  outline: none;
+  border: none;
+  border-bottom: 1px #00000030 dashed;
+  width: 50%;
+  text-align: right;
+}
+.dataInput:focus {
+  border-bottom: 2px #00000099 solid;
+}

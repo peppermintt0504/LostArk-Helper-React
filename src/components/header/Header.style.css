@@ -1,9 +1,8 @@
-
-.headerLayout{
-    position: absolute;
-    display: flex;
-    
-    height: 80px;
-    width: 100vw;
-    background-color: aliceblue;
+.headerLayout {
+  position: absolute;
+  display: flex;
+  top: 0;
+  height: 50px;
+  width: 100vw;
+  background-color: #77ddf9;
 }
