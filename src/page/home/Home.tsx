@@ -46,7 +46,7 @@ const Home: React.FC<homeProps> = ({}) => {
 
           <div className="DetailData">
             <div className="DetailDataPage">
-              <div className="produceData-Title">제작 정보</div>
+              <div className="produceData-Title bold">제작 정보</div>
               <div className="produceData-data">
                 <div>제작 단위</div>
                 <div className="bold">15</div>
@@ -91,7 +91,7 @@ const Home: React.FC<homeProps> = ({}) => {
             </div>
 
             <div className="DetailDataPage">
-              <div className="produceData-Title">판매 정보</div>
+              <div className="produceData-Title bold">판매 정보</div>
               <div className="produceData-data">
                 <div>판매 단위</div>
                 <div className="bold">{itemData?.BundleCount}</div>
@@ -150,6 +150,53 @@ const Home: React.FC<homeProps> = ({}) => {
               <div className="produceData-data">
                 <div>활동력 대비 이익률</div>
                 <div className="bold">-6.93%</div>
+              </div>
+            </div>
+
+            
+          </div>
+          <div className="itemIngredientInfo">
+            <div className="ingredientListLayout">
+              <div className="produceData-Title bold">재료 정보</div>
+
+              <div className="ingredientList">
+                <div className="ingredientData">
+                  <div className="ingredientLarge">재료</div>
+                  <div className="ingredientSmall">필요개수</div>
+                  <div className="ingredientSmall">판매단위</div>
+                  <div className="ingredientSmall">시세</div>
+                  <div className="ingredientSmall">단가</div>
+                  <div className="ingredientSmall">합계</div>
+                </div>
+                <div className="ingreLine"></div>
+                <div className="ingredientData">
+                  <div className="ingredientLarge">
+                  <div className="IName">
+                      <img className="IImage" src={itemData?.Icon}/>
+                      <div className="ingredientText">재료이루웅ㅁ</div>
+                    </div>
+                  </div>
+                  <div className="ingredientSmall">
+                    <div className="ingredientText">재료이루웅ㅁ</div>
+
+                  </div>
+                  <div className="ingredientSmall">판매단위</div>
+                  <div className="ingredientSmall">
+                    <div className="ingredientText"><input defaultValue={itemData?.CurrentMinPrice} className="dataInput" /><div className="coin "/></div>
+                  </div>
+                  <div className="ingredientSmall">
+                    <div className="ingredientText">
+                      100<div className="coin "/>
+                    </div>
+                  </div>
+                  <div className="ingredientSmall">
+                    <div className="ingredientText">
+                      100<div className="coin "/>
+                    </div>
+                  </div>
+                </div>
+                <div className="ingreLine"></div>
+
               </div>
             </div>
           </div>
