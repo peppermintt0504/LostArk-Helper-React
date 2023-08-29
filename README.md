@@ -1,4 +1,7 @@
 # LostArk Helper-React
+## 1.2v
+- [재료 정보 view 일부 구현](https://github.com/peppermintt0504/LostArk-Helper-React/issues/4)
+- Redux 기본 설정
 
 ## 1.1v
 - [제작 데이터 페이지 view 일부 구현](https://github.com/peppermintt0504/LostArk-Helper-React/issues/2)
