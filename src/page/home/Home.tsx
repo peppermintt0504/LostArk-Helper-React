@@ -2,27 +2,21 @@ import React, { useEffect } from "react";
 import Header from "../../components/header/Header";
 import instance from "../../shared/Request";
 import "./Home.style.css";
+import { useSelector } from "react-redux";
+import { RootState } from "../../redux/config";
+import { useDispatch } from "react-redux";
+import { checkItem } from "../../redux/modules/network";
 type homeProps = {};
 
 const Home: React.FC<homeProps> = ({}) => {
-  const getAPIData = async () => {
-    const res = instance({
-      method: "post",
-      url: "markets/items",
-      data: {
-        Sort: "GRADE",
-        CategoryCode: 50010,
-        ItemName: "오레하",
-        PageNo: 0,
-        SortCondition: "ASC",
-      },
-    }).then((data) => {
-      console.log(data);
-    });
-  };
+  let itemData = useSelector((state : RootState) => state.network.data);
+  const dispatch = useDispatch();
+
+  
+  console.log(itemData);
 
   useEffect(() => {
-    getAPIData();
+    dispatch(checkItem("최상급 오레하"));
   }, []);
 
   return (
@@ -100,11 +94,11 @@ const Home: React.FC<homeProps> = ({}) => {
               <div className="produceData-Title">판매 정보</div>
               <div className="produceData-data">
                 <div>판매 단위</div>
-                <div className="bold">1</div>
+                <div className="bold">{itemData?.BundleCount}</div>
               </div>
               <div className="produceData-data">
                 <div>시세</div>
-                <input className="dataInput" />
+                <input defaultValue={itemData?.CurrentMinPrice} className="dataInput" />
               </div>
               <div className="produceData-data">
                 <div>판매 단위 당 수수료</div>
@@ -115,7 +109,7 @@ const Home: React.FC<homeProps> = ({}) => {
               <div className="produceData-data">
                 <div>판매 단위 당 원가</div>
                 <div className="bold flexCenter">
-                  59.75<div className="coin "></div>
+                  {itemData? itemData.CurrentMinPrice! - 3 : "-"}<div className="coin "></div>
                 </div>
               </div>
               <div className="produceData-data">
