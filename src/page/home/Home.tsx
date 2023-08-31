@@ -1,11 +1,11 @@
-import React, { useEffect } from "react";
+import React, { ChangeEvent, useEffect } from "react";
 import Header from "../../components/header/Header";
 import instance from "../../shared/Request";
 import "./Home.style.css";
 import { useSelector } from "react-redux";
 import { RootState } from "../../redux/config";
 import { useDispatch } from "react-redux";
-import { checkItem } from "../../redux/modules/network";
+import { changeIngPrice, checkItem } from "../../redux/modules/network";
 type homeProps = {};
 
 const Home: React.FC<homeProps> = ({}) => {
@@ -15,10 +15,14 @@ const Home: React.FC<homeProps> = ({}) => {
   
   console.log(itemData);
 
+  const changePriceFunc = (e:ChangeEvent<HTMLInputElement>,name:string)=>{
+    dispatch(changeIngPrice({name,changePrice : e.target.value}))
+  }
+
   useEffect(() => {
     dispatch(checkItem("최상급 오레하"));
+   
   }, []);
-
   return (
     <div className="pageLayout">
       <Header />
@@ -169,33 +173,42 @@ const Home: React.FC<homeProps> = ({}) => {
                   <div className="ingredientSmall">합계</div>
                 </div>
                 <div className="ingreLine"></div>
-                <div className="ingredientData">
-                  <div className="ingredientLarge">
-                  <div className="IName">
-                      <img className="IImage" src={itemData?.Icon}/>
-                      <div className="ingredientText">재료이루웅ㅁ</div>
-                    </div>
-                  </div>
-                  <div className="ingredientSmall">
-                    <div className="ingredientText">재료이루웅ㅁ</div>
+                {itemData?.ingredients?.map((v)=>{
+                  return(
+                    <div key={v.Name}>
+                      <div className="ingredientData">
+                      <div className="ingredientLarge">
+                      <div className="IName">
+                          <div className={v.Grade == "일반" ?"normalBackground" : v.Grade == "고급" ? "rareBackground" :  v.Grade == "희귀" ? "uniqueBackground" :" heroBackground"}><img className="IImage" src={v.Icon}/></div>
+                          <div className="ingredientText">{v.Name}</div>
+                        </div>
+                      </div>
+                      <div className="ingredientSmall">
+                        <div className="ingredientText">{v.needCount}</div>
 
-                  </div>
-                  <div className="ingredientSmall">판매단위</div>
-                  <div className="ingredientSmall">
-                    <div className="ingredientText"><input defaultValue={itemData?.CurrentMinPrice} className="dataInput" /><div className="coin "/></div>
-                  </div>
-                  <div className="ingredientSmall">
-                    <div className="ingredientText">
-                      100<div className="coin "/>
+                      </div>
+                      <div className="ingredientSmall">{v.BundleCount}</div>
+                      <div className="ingredientSmall">
+                        <div className="ingredientText">
+                          <input onChange={(e)=>changePriceFunc(e,v.Name!)} defaultValue={v.CurrentMinPrice} className="dataInput" />
+                        <div className="coin"/></div>
+                      </div>
+                      <div className="ingredientSmall">
+                        <div className="ingredientText">
+                          {(v.CurrentMinPrice && v.BundleCount) &&v.CurrentMinPrice / v.BundleCount}<div className="coin "/>
+                        </div>
+                      </div>
+                      <div className="ingredientSmall">
+                        <div className="ingredientText">
+                        {(v.CurrentMinPrice && v.BundleCount && v.needCount) && Math.round(v.CurrentMinPrice / v.BundleCount * v.needCount * 100)/100}<div className="coin "/>
+                        </div>
+                      </div>
                     </div>
+                    <div className="ingreLine"></div>
                   </div>
-                  <div className="ingredientSmall">
-                    <div className="ingredientText">
-                      100<div className="coin "/>
-                    </div>
-                  </div>
-                </div>
-                <div className="ingreLine"></div>
+                )
+                })}
+                
 
               </div>
             </div>

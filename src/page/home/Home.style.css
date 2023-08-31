@@ -174,3 +174,12 @@
   justify-content : flex-end;
   gap:3px;
 }
+.normalBackground{
+  background: linear-gradient(135deg,#313131,#585858);
+}
+.rareBackground{
+  background: linear-gradient(135deg,#1e2d0b,#304911);
+}
+.uniqueBackground{
+  background: linear-gradient(135deg,#112739,#113d5d);
+}
